@@ -1,0 +1,453 @@
+gtk-button-images = 0 
+gtk-icon-sizes = "panel-menu=16, 16:panel=8, 8:gtk-button=16, 16:gtk-large-toolbar=24, 24"
+
+style "default" {
+  text[NORMAL]    = "#202020"
+  text[INSENSITIVE] = "#202020"
+  text[PRELIGHT]  = "#202020"
+  text[SELECTED]  = "#202020"
+  text[ACTIVE]    = "#202020"
+  fg[NORMAL]    = "#606060"
+  fg[PRELIGHT]    = "#f0f0f0"
+  fg[ACTIVE]    = "#f0f0f0"
+  fg[SELECTED]    = "#ffffff"
+  fg[INSENSITIVE]   = "#808080"
+  base[NORMAL]    = "#ffffff"
+  base[PRELIGHT]  = "#ffffff"
+  base[ACTIVE]    = "#ffdd33"
+  base[INSENSITIVE] = "#ffffff"
+  base[SELECTED]  = "#ffdd33"
+  bg[NORMAL]    = "#f0f0f0"
+  bg[PRELIGHT]    = "#cd0089"
+  bg[ACTIVE]    = "#f0f0f0"
+  bg[SELECTED]    = "#808080"
+  bg[INSENSITIVE]   = "#ffffff"
+
+  xthickness = 0
+  ythickness = 0
+
+  GtkWidget::interior_focus = 2
+  GtkWidget::focus_padding = 2
+  GtkWidget::focus-line-width = 0
+  GtkWidget::cursor-color = "#808080"
+  GtkWidget::link-color = "#6ca6e2"
+  GtkWidget::visited-link-color = "#e26c8c"
+
+  GtkRange::trough_border = 0
+  GtkRange::slider_width = 15
+  GtkRange::stepper_size = 1
+
+  GtkVScale::slider_length = 11
+  GtkVScale::slider_width = 21
+  GtkHScale::slider_length = 11
+  GtkHScale::slider_width = 21
+  GtkNotebook::tab-overlap = 0
+  GtkPaned::handle_size = 0
+  GtkScrollbar::min_slider_length = 20
+  GtkCheckButton::indicator_size = 12
+  GtkCheckButton::indicator_spacing = 3
+  GtkMenuBar::internal_padding = 0
+  GtkMenu::horizontal-padding = 0
+  GtkMenu::vertical-padding = 0
+  GtkSeparatorMenuItem::horizontal-padding = 7
+  GtkOptionMenu::indicator_size = { 15, 8 }
+  GtkOptionMenu::indicator_spacing = { 8, 2, 0, 0 }
+  GtkNotebook::shadow_type = GTK_SHADOW_NONE
+  GtkStatusbar::shadow_type = GTK_SHADOW_NONE
+  GtkSpinButton::shadow_type = GTK_SHADOW_NONE
+  GtkTreeView::odd-row-color = "#ffffff"
+  GtkTreeView::even-row-color = "#ffffff"
+  GtkTreeView::allow-rules = 1
+  engine "pixmap" {
+    image {
+      function = SHADOW
+      recolorable = FALSE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = SHADOW_GAP
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+      gap_start_file = "backgrounds/trans.png"
+      gap_start_border = { 0, 0, 0, 0 }
+      gap_end_file = "backgrounds/trans.png"
+      gap_end_border = { 0, 0, 0, 0 }
+    }
+
+    image {
+      function = VLINE
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = HLINE
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+
+    image {
+      function = FOCUS
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+  }
+}
+
+class "GtkWidget" style "default"
+
+style "window" = "default" {
+  bg[NORMAL] = "#f4f4f4"
+  bg[ACTIVE] = "#f4f4f4"
+  bg[PRELIGHT] = "#f4f4f4"
+}
+class "GtkWindow" style "window"
+
+style "menu" = "default" {
+  xthickness = 4
+  ythickness = 2
+  bg[INSENSITIVE] = "#ffffff"
+  bg[NORMAL] = "#ffffff"
+
+}
+widget_class "*<GtkMenu>*" style "menu"
+
+style "menuitem" = "default" {
+  xthickness = 4
+  ythickness = 4
+  fg[NORMAL] = "#202020"
+  bg[NORMAL] = "#ffffff"
+  fg[PRELIGHT] = "#202020"
+  bg[PRELIGHT] = "#ffdd33"
+  fg[ACTIVE] = "#202020"
+  bg[ACTIVE] = "#ffdd33"
+  fg[INSENSITIVE] = "#ffffff"
+  bg[INSENSITIVE] = "#ffffff"
+}
+
+widget_class "*<GtkMenuItem>*" style "menuitem"
+widget_class "*<GtkTearoffMenuItem>*" style "menuitem"
+
+style "scrollbar" {
+  engine "pixmap"  {
+    image {
+      function = BOX
+      recolorable = TRUE
+      detail = "trough"
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = NORMAL
+      file = "scrollbars/horizontal-normal.png"
+      border = {12, 12, 0, 0 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = ACTIVE
+      shadow = IN
+      file = "scrollbars/horizontal-active.png"
+      border = { 6, 6, 6, 6 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = PRELIGHT
+      file = "scrollbars/horizontal-active.png"
+      border = { 6, 6, 6, 6 }
+      stretch = TRUE
+      orientation = HORIZONTAL
+    }
+    image {
+      function = BOX
+      recolorable = TRUE
+      detail = "trough"
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = NORMAL
+      file = "scrollbars/vertical-normal.png"
+      border = { 0, 0, 12, 12 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = ACTIVE
+      file = "scrollbars/vertical-active.png"
+      border = { 6, 6, 6, 6 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = PRELIGHT
+      file = "scrollbars/vertical-active.png"
+      border = { 6, 6, 6, 6 }
+      stretch = TRUE
+      orientation = VERTICAL
+    }
+    image {
+      function = SLIDER
+      recolorable = TRUE
+      state = INSENSITIVE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+    image {
+      function = STEPPER
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      stretch = TRUE
+    }
+
+  }
+}
+class "GtkScrollbar" style "scrollbar"
+
+style "progressbar" = "default" {
+  xthickness = 0
+  ythickness = 0
+}
+
+class "GtkProgressBar" style "progressbar"
+
+style "button" = "default" {
+  xthickness = 2
+  ythickness = 2
+  GtkWidget::interior_focus = 2
+  GtkWidget::focus_padding = 2
+  GtkButton::child-displacement-y = 0
+  GtkButton::default-border = { 0, 0, 0, 0 }
+  GtkButton::default-outside-border = { 0, 0, 0, 0 }
+  GtkButton::inner-border = { 2, 2, 2, 2 }
+  fg[NORMAL] = "#202020"
+  fg[PRELIGHT] = "#202020"
+  fg[ACTIVE] = "#202020"
+  engine "pixmap" {
+    image {
+      function = BOX
+      detail = "buttondefault"
+      recolorable = FALSE
+      file = "buttons/normal.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = NORMAL
+      recolorable = FALSE
+      file = "buttons/normal.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      file = "buttons/active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = ACTIVE
+      recolorable = FALSE
+      file = "buttons/active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = INSENSITIVE
+      recolorable = TRUE
+      file = "buttons/inactive.png"
+      border = { 3, 3, 3, 5 }
+      stretch = TRUE
+    }
+    image {
+      function = ARROW
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = FALSE
+      arrow_direction = DOWN
+    }
+  }
+}
+
+style "centerbutton" = "button" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      detail = "buttondefault"
+      recolorable = FALSE
+      file = "buttons/center.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = NORMAL
+      recolorable = FALSE
+      file = "buttons/center.png"
+      border = { 0, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      file = "buttons/center-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = ACTIVE
+      recolorable = FALSE
+      file = "buttons/center-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = INSENSITIVE
+      recolorable = TRUE
+      file = "buttons/inactive.png"
+      border = { 3, 3, 3, 5 }
+      stretch = TRUE
+    }
+  }
+}
+
+style "flatbutton" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      file = "buttons/flat-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+  }
+}
+
+style "entry" = "default" {
+  xthickness = 4
+  ythickness = 4
+  GtkEntry::honors-transparent-bg-hint = 1
+  GtkEntry::inner-border = { 0, 0, 0, 2 }
+  GtkEntry::padding = 0
+  engine "pixmap" {
+    image  {
+      function = SHADOW
+      state = INSENSITIVE
+      detail = "entry"
+      file = "buttons/inactive.png"
+      border = { 3, 3, 3, 5 }
+      stretch = TRUE
+    }
+    image {
+      function = ARROW
+      file = "backgrounds/trans.png"
+      detail = "entry"
+      border = { 0, 0, 0, 0 }
+      stretch = FALSE
+    }
+    image {
+      function = SHADOW
+      detail = "entry"
+      state = NORMAL
+      file = "buttons/normal.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+  }
+}
+
+widget_class "*<GtkButton>*" style "button"
+class "GtkEntry" style "entry"
+class "GtkOldEditable" style "entry"
+widget_class "*<GtkEntry>*" style "entry"
+widget_class "*<GtkOldEditable>*" style "entry"
+widget_class "*<GtkFontButton>*" style "button"
+widget_class "*<GtkColorButton>*" style "button"
+widget_class "*<GtkToggleButton>*" style "button"
+widget_class "*<GtkComboBox>*" style "button"
+widget_class "*<GtkComboBox>*" style "entry"
+widget_class "*<GtkComboBoxEntry>*" style "button"
+widget_class "*<GtkOptionMenu>*" style "button"
+widget_class "*<GtkTreeView>*<GtkButton>*" style "centerbutton"
+
+widget_class "*<GtkToolButton>*<GtkButton>" style "flatbutton"
+widget_class "*<GtkVBox>*<GtkEventBox>.<GtkToolbar>*<GtkButton>" style "flatbutton"
+
+style "notebook" = "default" {
+  fg[NORMAL] = "#202020"
+  fg[ACTIVE] = "#202020"
+  engine "pixmap" {
+    image {
+      function = EXTENSION
+      state = ACTIVE
+      file = "buttons/center.png"
+      recolorable = FALSE
+      border = { 0, 0, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = EXTENSION
+      recolorable = FALSE
+      file = "buttons/center-active.png"
+      border = { 0, 0, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX_GAP
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = FALSE
+      gap_file = "backgrounds/trans.png"
+      gap_border = { 0, 0, 0, 0 }
+      gap_start_file = "backgrounds/trans.png"
+      gap_start_border = { 0, 0, 0, 0 }
+      gap_end_file = "backgrounds/trans.png"
+      gap_end_border = { 0, 0, 0, 0 }
+    }
+    image {
+      function = BOX
+      recolorable = TRUE
+      file = "backgrounds/trans.png"
+      border = { 0, 0, 0, 0 }
+      stretch = TRUE
+    }
+  }
+}
+
+class "GtkNotebook" style "notebook"
+widget_class "*<GtkNotebook>.<GtkLabel>" style "notebook"
