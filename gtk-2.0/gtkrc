@@ -7,9 +7,9 @@ style "default" {
   text[PRELIGHT]  = "#202020"
   text[SELECTED]  = "#202020"
   text[ACTIVE]    = "#202020"
-  fg[NORMAL]    = "#606060"
-  fg[PRELIGHT]    = "#f4f4f4"
-  fg[ACTIVE]    = "#f4f4f4"
+  fg[NORMAL]    = "#202020"
+  fg[PRELIGHT]    = "#202020"
+  fg[ACTIVE]    = "#202020"
   fg[SELECTED]    = "#ffffff"
   fg[INSENSITIVE]   = "#808080"
   base[NORMAL]    = "#ffffff"
@@ -20,7 +20,7 @@ style "default" {
   bg[NORMAL]    = "#f4f4f4"
   bg[PRELIGHT]    = "#cd0089"
   bg[ACTIVE]    = "#f4f4f4"
-  bg[SELECTED]    = "#808080"
+  bg[SELECTED]    = "#ffdd33"
   bg[INSENSITIVE]   = "#ffffff"
 
   xthickness = 0
@@ -37,10 +37,8 @@ style "default" {
   GtkRange::slider_width = 15
   GtkRange::stepper_size = 1
 
-  GtkVScale::slider_length = 11
-  GtkVScale::slider_width = 21
-  GtkHScale::slider_length = 11
-  GtkHScale::slider_width = 21
+  GtkScale::slider_length = 20
+  GtkScale::slider_width = 20
   GtkNotebook::tab-overlap = 0
   GtkPaned::handle_size = 0
   GtkScrollbar::min_slider_length = 20
@@ -80,16 +78,14 @@ style "default" {
 
     image {
       function = VLINE
-      recolorable = TRUE
-      file = "backgrounds/trans.png"
-      border = { 0, 0, 0, 0 }
+      file = "backgrounds/border.png"
+      border = { 1, 0, 0, 0 }
       stretch = TRUE
     }
     image {
       function = HLINE
-      recolorable = TRUE
-      file = "backgrounds/trans.png"
-      border = { 0, 0, 0, 0 }
+      file = "backgrounds/border.png"
+      border = { 0, 0, 1, 0 }
       stretch = TRUE
     }
 
@@ -124,13 +120,9 @@ widget_class "*<GtkMenu>*" style "menu"
 style "menuitem" = "default" {
   xthickness = 4
   ythickness = 4
-  fg[NORMAL] = "#202020"
   bg[NORMAL] = "#ffffff"
-  fg[PRELIGHT] = "#202020"
   bg[PRELIGHT] = "#ffdd33"
-  fg[ACTIVE] = "#202020"
   bg[ACTIVE] = "#ffdd33"
-  fg[INSENSITIVE] = "#ffffff"
   bg[INSENSITIVE] = "#ffffff"
 }
 
@@ -231,25 +223,13 @@ style "scrollbar" {
 }
 class "GtkScrollbar" style "scrollbar"
 
-style "progressbar" = "default" {
-  xthickness = 0
-  ythickness = 0
-}
-
-class "GtkProgressBar" style "progressbar"
-
 style "button" = "default" {
-  xthickness = 2
-  ythickness = 2
   GtkWidget::interior_focus = 2
   GtkWidget::focus_padding = 2
   GtkButton::child-displacement-y = 0
   GtkButton::default-border = { 0, 0, 0, 0 }
   GtkButton::default-outside-border = { 0, 0, 0, 0 }
-  GtkButton::inner-border = { 2, 2, 2, 2 }
-  fg[NORMAL] = "#202020"
-  fg[PRELIGHT] = "#202020"
-  fg[ACTIVE] = "#202020"
+  GtkButton::inner-border = { 4, 4, 4, 4 }
   engine "pixmap" {
     image {
       function = BOX
@@ -290,13 +270,6 @@ style "button" = "default" {
       file = "buttons/inactive.png"
       border = { 3, 3, 3, 5 }
       stretch = TRUE
-    }
-    image {
-      function = ARROW
-      file = "backgrounds/trans.png"
-      border = { 0, 0, 0, 0 }
-      stretch = FALSE
-      arrow_direction = DOWN
     }
   }
 }
@@ -316,7 +289,7 @@ style "centerbutton" = "button" {
       state = NORMAL
       recolorable = FALSE
       file = "buttons/center.png"
-      border = { 0, 3, 3, 3 }
+      border = { 0, 0, 3, 3 }
       stretch = TRUE
     }
     image  {
@@ -324,7 +297,7 @@ style "centerbutton" = "button" {
       state = PRELIGHT
       recolorable = FALSE
       file = "buttons/center-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 0, 0, 3, 3 }
       stretch = TRUE
     }
     image  {
@@ -332,7 +305,7 @@ style "centerbutton" = "button" {
       state = ACTIVE
       recolorable = FALSE
       file = "buttons/center-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 0, 0, 3, 3 }
       stretch = TRUE
     }
     image  {
@@ -340,6 +313,51 @@ style "centerbutton" = "button" {
       state = INSENSITIVE
       recolorable = TRUE
       file = "buttons/inactive.png"
+      border = { 0, 0, 3, 5 }
+      stretch = TRUE
+    }
+  }
+}
+
+style "rightbutton" = "button" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      detail = "buttondefault"
+      recolorable = FALSE
+      file = "buttons/right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = NORMAL
+      recolorable = FALSE
+      file = "buttons/right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      file = "buttons/right-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = ACTIVE
+      recolorable = FALSE
+      file = "buttons/right-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = INSENSITIVE
+      recolorable = TRUE
+      file = "buttons/right-inactive.png"
       border = { 3, 3, 3, 5 }
       stretch = TRUE
     }
@@ -358,34 +376,49 @@ style "flatbutton" {
 }
 
 style "entry" = "default" {
-  xthickness = 4
-  ythickness = 4
   GtkEntry::honors-transparent-bg-hint = 1
-  GtkEntry::inner-border = { 0, 0, 0, 2 }
+  GtkEntry::inner-border = { 6, 6, 6, 6 }
   GtkEntry::padding = 0
+  text[INSENSITIVE] = "#808080"
   engine "pixmap" {
+    image {
+      function = FLAT_BOX
+      detail = "entry_bg"
+      state = NORMAL
+      file = "buttons/normal.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
     image  {
-      function = SHADOW
-      state = INSENSITIVE
-      detail = "entry"
+      function = FLAT_BOX
+      detail = "entry_bg"
       file = "buttons/inactive.png"
       border = { 3, 3, 3, 5 }
       stretch = TRUE
     }
     image {
-      function = ARROW
-      file = "backgrounds/trans.png"
-      detail = "entry"
-      border = { 0, 0, 0, 0 }
-      stretch = FALSE
     }
+  }
+}
+
+style "entrywith" = "entry" {
+  engine "pixmap" {
     image {
-      function = SHADOW
-      detail = "entry"
+      function = FLAT_BOX
+      detail = "entry_bg"
       state = NORMAL
-      file = "buttons/normal.png"
+      file = "buttons/left.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
+    }
+    image  {
+      function = FLAT_BOX
+      detail = "entry_bg"
+      file = "buttons/left-inactive.png"
+      border = { 3, 3, 3, 5 }
+      stretch = TRUE
+    }
+    image {
     }
   }
 }
@@ -393,23 +426,89 @@ style "entry" = "default" {
 widget_class "*<GtkButton>*" style "button"
 class "GtkEntry" style "entry"
 class "GtkOldEditable" style "entry"
-widget_class "*<GtkEntry>*" style "entry"
 widget_class "*<GtkOldEditable>*" style "entry"
 widget_class "*<GtkFontButton>*" style "button"
 widget_class "*<GtkColorButton>*" style "button"
 widget_class "*<GtkToggleButton>*" style "button"
-widget_class "*<GtkComboBox>*" style "button"
-widget_class "*<GtkComboBox>*" style "entry"
-widget_class "*<GtkComboBoxEntry>*" style "button"
+widget_class "*<GtkCombo>*" style "entrywith"
+widget_class "*<GtkComboBox>*" style "rightbutton"
+widget_class "*<GtkComboBox>*" style "entrywith"
+widget_class "*<GtkComboBoxEntry>*" style "rightbutton"
+widget_class "*<GtkComboBoxEntry>*" style "entrywith"
 widget_class "*<GtkOptionMenu>*" style "button"
 widget_class "*<GtkTreeView>*<GtkButton>*" style "centerbutton"
 
 widget_class "*<GtkToolButton>*<GtkButton>" style "flatbutton"
 widget_class "*<GtkVBox>*<GtkEventBox>.<GtkToolbar>*<GtkButton>" style "flatbutton"
 
+style "progressbar" = "default" {
+   bg[NORMAL] = "#e0e0e0"
+}
+
+class "GtkProgressBar" style "progressbar"
+
+style "spinbutton" = "default" {
+  engine "pixmap" {
+    image {
+      function = BOX
+      state = INSENSITIVE
+      detail = "spinbutton_up"
+      recolorable = TRUE
+      file = "buttons/top-right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = NORMAL
+      detail = "spinbutton_up"
+      recolorable = TRUE
+      file = "buttons/top-right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      detail = "spinbutton_up"
+      recolorable = TRUE
+      file = "buttons/top-right-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = INSENSITIVE
+      detail = "spinbutton_down"
+      recolorable = TRUE
+      file = "buttons/bottom-right-inactive.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = NORMAL
+      detail = "spinbutton_down"
+      recolorable = TRUE
+      file = "buttons/bottom-right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      detail = "spinbutton_down"
+      recolorable = TRUE
+      file = "buttons/bottom-right-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+  }
+}
+
+class "GtkSpinButton" style "spinbutton"
+class "GtkSpinButton" style "entrywith"
+
 style "notebook" = "default" {
-  fg[NORMAL] = "#202020"
-  fg[ACTIVE] = "#202020"
+  fg[INSENSITIVE] = "#202020"
   engine "pixmap" {
     image {
       function = EXTENSION
@@ -451,3 +550,51 @@ style "notebook" = "default" {
 
 class "GtkNotebook" style "notebook"
 widget_class "*<GtkNotebook>.<GtkLabel>" style "notebook"
+widget_class "*<GtkNotebook>.<GtkHBox>.<GtkLabel>" style "notebook"
+
+style "slider" = "default" {
+  GtkScale::trough-side-details = 1
+  engine "pixmap" {
+    image {
+      function = SLIDER
+      file = "scales/inactive.png"
+      state = INSENSITIVE
+    }
+    image {
+      function = SLIDER
+      file = "scales/normal.png"
+    }
+    image {
+      function = BOX
+      file = "scales/trough-off-inactive.png"
+      detail = "trough-upper"
+      border = {9, 9, 10, 10}
+      state = INSENSITIVE
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      file = "scales/trough-off.png"
+      detail = "trough-upper"
+      border = {9, 9, 10, 10}
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      file = "scales/trough-on-inactive.png"
+      detail = "trough-lower"
+      border = {9, 9, 10, 10}
+      state = INSENSITIVE
+      stretch = TRUE
+    }
+    image {
+      function = BOX
+      file = "scales/trough-on.png"
+      detail = "trough-lower"
+      border = {9, 9, 10, 10}
+      stretch = TRUE
+    }
+  }
+}
+class "GtkHScale" style "slider"
+class "GtkVScale" style "slider"
