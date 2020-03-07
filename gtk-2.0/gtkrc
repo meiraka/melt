@@ -42,7 +42,7 @@ style "default" {
   GtkNotebook::tab-overlap = 0
   GtkPaned::handle_size = 0
   GtkScrollbar::min_slider_length = 20
-  GtkCheckButton::indicator_size = 12
+  GtkCheckButton::indicator_size = 20
   GtkCheckButton::indicator_spacing = 3
   GtkMenuBar::internal_padding = 0
   GtkMenu::horizontal-padding = 0
@@ -59,10 +59,6 @@ style "default" {
   engine "pixmap" {
     image {
       function = SHADOW
-      recolorable = FALSE
-      file = "backgrounds/trans.png"
-      border = { 0, 0, 0, 0 }
-      stretch = TRUE
     }
     image {
       function = SHADOW_GAP
@@ -91,22 +87,12 @@ style "default" {
 
     image {
       function = FOCUS
-      recolorable = TRUE
-      file = "backgrounds/trans.png"
-      border = { 0, 0, 0, 0 }
-      stretch = TRUE
     }
   }
 }
 
 class "GtkWidget" style "default"
-
-style "window" = "default" {
-  bg[NORMAL] = "#f4f4f4"
-  bg[ACTIVE] = "#f4f4f4"
-  bg[PRELIGHT] = "#f4f4f4"
-}
-class "GtkWindow" style "window"
+class "GtkWindow" style "default"
 
 style "menu" = "default" {
   xthickness = 4
@@ -368,9 +354,20 @@ style "flatbutton" {
   engine "pixmap" {
     image {
       function = BOX
+      state = PRELIGHT
       file = "buttons/flat-active.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
+    }
+    image {
+      function = BOX
+      state = ACTIVE
+      file = "buttons/flat-active.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image {
+      function = BOX
     }
   }
 }
@@ -423,6 +420,7 @@ style "entrywith" = "entry" {
   }
 }
 
+class "GtkLinkButton" style "flatbutton"
 widget_class "*<GtkButton>*" style "button"
 class "GtkEntry" style "entry"
 class "GtkOldEditable" style "entry"
@@ -506,6 +504,64 @@ style "spinbutton" = "default" {
 
 class "GtkSpinButton" style "spinbutton"
 class "GtkSpinButton" style "entrywith"
+
+style "checkbutton" = "default" {
+  engine "pixmap" {
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "check/unchecked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "check/checked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      shadow = IN
+      overlay_file = "check/checked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      shadow = OUT
+      overlay_file = "check/unchecked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "radio/unchecked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "radio/checked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      shadow = IN
+      overlay_file = "radio/checked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      shadow = OUT
+      overlay_file = "radio/unchecked.png"
+      overlay_stretch = FALSE
+    }
+  }
+}
+class "GtkCheckButton" style "checkbutton"
 
 style "notebook" = "default" {
   fg[INSENSITIVE] = "#202020"
