@@ -115,6 +115,7 @@ button:hover {
   box-shadow: 0 2px rgba(0,0,0,0.3);
   color: @text_normal;
   padding: 4px;
+  margin: 2px 0;
 }
 
 button:active {
@@ -305,6 +306,7 @@ entry {
   padding: 4px;
   border-radius: 2px;
   box-shadow: 0 2px rgba(0,0,0,0.3);
+  margin: 2px 0;
 }
 
 entry:hover {
@@ -603,4 +605,24 @@ notebook header.right tab:hover {
 notebook header.left tab:checked,
 notebook header.right tab:checked {
   background-color: @yellow;
+}
+
+@keyframes spin {
+  to {
+    -gtk-icon-transform: rotate(1turn);
+  }
+}
+
+spinner {
+  opacity: 0;
+  -gtk-icon-source: -gtk-icontheme("process-working-symbolic");
+}
+
+spinner:checked {
+  opacity: 1;
+  animation: spin 1s linear infinite;
+}
+
+spinner:checked:disabled {
+  opacity: 0.6;
 }
