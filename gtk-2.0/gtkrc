@@ -18,7 +18,7 @@ style "default" {
   base[INSENSITIVE] = "#ffffff"
   base[SELECTED]  = "#ffdd33"
   bg[NORMAL]    = "#f4f4f4"
-  bg[PRELIGHT]    = "#cd0089"
+  bg[PRELIGHT]    = "#f4f4f4"
   bg[ACTIVE]    = "#f4f4f4"
   bg[SELECTED]    = "#ffdd33"
   bg[INSENSITIVE]   = "#ffffff"
@@ -441,6 +441,7 @@ widget_class "*<GtkVBox>*<GtkEventBox>.<GtkToolbar>*<GtkButton>" style "flatbutt
 
 style "progressbar" = "default" {
    bg[NORMAL] = "#e0e0e0"
+   bg[PRELIGHT] = "#cd0089"
 }
 
 class "GtkProgressBar" style "progressbar"
