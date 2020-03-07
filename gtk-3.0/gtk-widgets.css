@@ -344,6 +344,54 @@ spinbutton.vertical button:last-child {
   border-radius: 0 0 100% 100%;
 }
 
+check,
+check:hover,
+radio,
+radio:hover {
+  border: solid 2px @yellow;
+  background-color: @white;
+  margin: 2px 4px;
+}
+
+check {
+  border-radius: 3px;
+}
+radio {
+  border-radius: 100%;
+}
+
+check:indeterminate,
+check:checked,
+radio:indeterminate,
+radio:checked {
+  background-color: @yellow;
+}
+check:indeterminate,
+radio:indeterminate {
+  -gtk-icon-source: url('./assets/indeterminate-black.svg');
+}
+check:checked {
+  -gtk-icon-source: url('./assets/check-black.svg');
+}
+radio:checked {
+  -gtk-icon-source: url('./assets/radio-black.svg');
+}
+
+check:disabled,
+radio:disabled {
+  background-color: transparent;
+}
+check:disabled:indeterminate,
+radio:disabled:indeterminate {
+  -gtk-icon-source: url('./assets/indeterminate.svg');
+}
+check:disabled:checked {
+  -gtk-icon-source: url('./assets/check.svg');
+}
+radio:disabled:checked {
+  -gtk-icon-source: url('./assets/radio.svg');
+}
+
 progressbar {
   color: @text_normal;
   margin: 2px;
