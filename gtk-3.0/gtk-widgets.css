@@ -5,20 +5,21 @@
 @define-color lightgray #dddddd;
 @define-color gray #aaaaaa;
 @define-color black #494949;
+@define-color dark #202020;
 @define-color white #fdfdfe;
 
-@define-color text_normal #202020;
+@define-color box #fdfdfe;
+@define-color box_text #202020;
 
 @define-color window_normal #f4f4f4;
-@define-color window_rounded #e4e4e4;
-@define-color window_normal_text #202020;
+@define-color window_normal_text #202020;;
 
 * {
   transition: background-color 0.5s ease;
 }
 
 selection {
-  color: @text_normal;
+  color: @dark;
   background-color: @yellow;
 }
 
@@ -93,17 +94,22 @@ scrollbar slider:hover {
 
 /*WIP*/
 menu {
-  background-color: @white;
+  background-color: @box;
   padding: 2px;
 }
-menuitem {
+menubar > menuitem {
   color: @window_normal_text;
+}
+
+menuitem {
+  color: @box_text;
   padding: 2px;
   margin: 2px;
   border-radius: 2px;
 }
 menuitem:hover {
   background-color: @yellow;
+  color: @dark;
 }
 menuitem:disabled {
   color: alpha(currentColor, 0.4);
@@ -114,10 +120,10 @@ menu separator {
 
 button,
 button:hover {
-  background-color: @white;
+  background-color: @box;
   border-radius: 2px;
   box-shadow: 0 2px rgba(0,0,0,0.3);
-  color: @text_normal;
+  color: @box_text;
   padding: 4px;
   margin: 2px 0;
 }
@@ -133,11 +139,18 @@ button.destructive-action {
 
 button:checked {
   background-color: @yellow;
+  color: @dark;
 }
 
 button:disabled {
   color: alpha(currentColor, 0.4);
   box-shadow: 0 0;
+}
+button > label:disabled {
+  color: alpha(@box_text, 0.4);
+}
+button:checked > label:disabled {
+  color: alpha(@dark, 0.4);
 }
 
 button:disabled image {
@@ -146,6 +159,7 @@ button:disabled image {
 
 button.color,
 button.flat {
+  color: @window_normal_text;
   background-color: transparent;
   box-shadow: none;
 }
@@ -196,7 +210,8 @@ separator.vertical {
 }
 
 list {
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
 }
 list separator {
   border: none;
@@ -290,7 +305,8 @@ paned.vertical > separator {
 }
 
 box.sidebar {
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
 }
 box.sidebar > * {
   padding: 4px;
@@ -300,13 +316,13 @@ box.sidebar > .highlight {
 }
 
 textview {
-  color: @text_normal;
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
 }
 
 entry {
-  color: @text_normal;
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
   padding: 4px;
   border-radius: 2px;
   box-shadow: 0 2px rgba(0,0,0,0.3);
@@ -355,7 +371,7 @@ check:hover,
 radio,
 radio:hover {
   border: solid 2px @yellow;
-  background-color: @white;
+  background-color: @box;
   margin: 2px 4px;
 }
 
@@ -399,7 +415,7 @@ radio:disabled:checked {
 }
 
 progressbar {
-  color: @text_normal;
+  color: @window_normal_text;
   margin: 2px;
 }
 progressbar trough {
@@ -455,7 +471,7 @@ switch:hover slider {
   box-shadow: 0 2px rgba(0,0,0,0.3);
   min-height: 22px;
   min-width: 22px;
-  background-color: @white;
+  background-color: @box;
   transition: background-color 0.05s;
 }
 
@@ -490,12 +506,12 @@ scale slider {
   margin: -5px;
   min-height: 18px;
   min-width: 18px;
-  background-color: @white;
+  background-color: @box;
   border-radius: 12px;
   box-shadow: 0 2px rgba(0,0,0,0.3);
 }
 scale value {
-  color: @text_normal;
+  color: @window_normal_text;
   margin: 2px;
 }
 scale:disabled slider,
@@ -546,7 +562,8 @@ scale:disabled value {
 treeview,
 iconvew,
 .view {
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
   border-radius: 2px;
 }
 treeview button {
@@ -554,6 +571,7 @@ treeview button {
 }
 treeview:selected {
   background-color: @yellow;
+  color: @dark;
 }
 iconview:selected {
   border: solid 2px @gray;
@@ -583,13 +601,15 @@ notebook header.bottom tab:hover {
 notebook header.top tab:checked,
 notebook header.bottom tab:checked {
   background-color: @yellow;
+  color: @dark;
 }
 
 
 
 notebook header.left,
 notebook header.right {
-  background-color: @white;
+  background-color: @box;
+  color: @box_text;
   border: 1px solid @lightgray;
 }
 notebook header.right {
@@ -609,6 +629,7 @@ notebook header.right tab:hover {
 notebook header.left tab:checked,
 notebook header.right tab:checked {
   background-color: @yellow;
+  color: @dark;
 }
 
 @keyframes spin {
