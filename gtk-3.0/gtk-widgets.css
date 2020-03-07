@@ -31,6 +31,10 @@ popover,
   background-color: @window_normal;
 }
 
+label:disabled {
+  color: alpha(@window_normal_text, 0.4);
+}
+
 .app-notification,
 .app-notification.frame {
   color: @white;
