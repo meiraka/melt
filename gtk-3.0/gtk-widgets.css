@@ -12,7 +12,7 @@
 @define-color box_text #202020;
 
 @define-color window_normal #f4f4f4;
-@define-color window_normal_text #202020;;
+@define-color window_normal_text #202020;
 
 * {
   transition: background-color 0.5s ease;
@@ -97,15 +97,17 @@ menu {
   background-color: @box;
   padding: 2px;
 }
-menubar > menuitem {
-  color: @window_normal_text;
-}
 
 menuitem {
   color: @box_text;
+  background-color: @box;
   padding: 2px;
   margin: 2px;
   border-radius: 2px;
+}
+menubar > menuitem {
+  color: @window_normal_text;
+  background-color: @window_normal;
 }
 menuitem:hover {
   background-color: @yellow;
