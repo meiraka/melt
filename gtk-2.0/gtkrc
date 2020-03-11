@@ -44,9 +44,10 @@ style "default" {
   GtkScrollbar::min_slider_length = 20
   GtkCheckButton::indicator_size = 20
   GtkCheckButton::indicator_spacing = 3
-  GtkMenuBar::internal_padding = 0
   GtkMenu::horizontal-padding = 0
   GtkMenu::vertical-padding = 0
+  GtkMenuBar::internal_padding = 0
+  GtkMenuItem::toggle-spacing = 12
   GtkSeparatorMenuItem::horizontal-padding = 7
   GtkOptionMenu::indicator_size = { 15, 8 }
   GtkOptionMenu::indicator_spacing = { 8, 2, 0, 0 }
@@ -87,6 +88,59 @@ style "default" {
 
     image {
       function = FOCUS
+    }
+
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "check/unchecked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "check/checked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      shadow = IN
+      overlay_file = "check/checked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = CHECK
+      shadow = OUT
+      overlay_file = "check/unchecked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = OUT
+      overlay_file = "radio/unchecked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      state = INSENSITIVE
+      shadow = IN
+      overlay_file = "radio/checked-inactive.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      shadow = IN
+      overlay_file = "radio/checked.png"
+      overlay_stretch = FALSE
+    }
+    image {
+      function = OPTION
+      shadow = OUT
+      overlay_file = "radio/unchecked.png"
+      overlay_stretch = FALSE
     }
   }
 }
@@ -505,64 +559,6 @@ style "spinbutton" = "default" {
 
 class "GtkSpinButton" style "spinbutton"
 class "GtkSpinButton" style "entrywith"
-
-style "checkbutton" = "default" {
-  engine "pixmap" {
-    image {
-      function = CHECK
-      state = INSENSITIVE
-      shadow = OUT
-      overlay_file = "check/unchecked-inactive.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = CHECK
-      state = INSENSITIVE
-      shadow = IN
-      overlay_file = "check/checked-inactive.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = CHECK
-      shadow = IN
-      overlay_file = "check/checked.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = CHECK
-      shadow = OUT
-      overlay_file = "check/unchecked.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = OPTION
-      state = INSENSITIVE
-      shadow = OUT
-      overlay_file = "radio/unchecked-inactive.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = OPTION
-      state = INSENSITIVE
-      shadow = IN
-      overlay_file = "radio/checked-inactive.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = OPTION
-      shadow = IN
-      overlay_file = "radio/checked.png"
-      overlay_stretch = FALSE
-    }
-    image {
-      function = OPTION
-      shadow = OUT
-      overlay_file = "radio/unchecked.png"
-      overlay_stretch = FALSE
-    }
-  }
-}
-class "GtkCheckButton" style "checkbutton"
 
 style "notebook" = "default" {
   fg[INSENSITIVE] = "#202020"
