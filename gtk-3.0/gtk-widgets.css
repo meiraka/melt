@@ -579,10 +579,12 @@ iconvew,
   color: @box_text;
   border-radius: 2px;
 }
-treeview button {
+treeview button,
+treeview button:hover {
   border-radius: 0;
 }
 treeview:selected {
+  border-radius: 0;
   background-color: @yellow;
   color: @dark;
 }
