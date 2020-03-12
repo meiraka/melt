@@ -291,6 +291,16 @@ style "button" = "default" {
       function = BOX
       state = PRELIGHT
       recolorable = FALSE
+      shadow = OUT
+      file = "buttons/normal.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      shadow = IN
       file = "buttons/active.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
@@ -381,6 +391,16 @@ style "rightbutton" = "button" {
       function = BOX
       state = PRELIGHT
       recolorable = FALSE
+      shadow = OUT
+      file = "buttons/right.png"
+      border = { 3, 3, 3, 3 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      shadow = IN
       file = "buttons/right-active.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
@@ -513,10 +533,10 @@ style "spinbutton" = "default" {
     }
     image {
       function = BOX
-      state = NORMAL
+      state = ACTIVE
       detail = "spinbutton_up"
       recolorable = TRUE
-      file = "buttons/top-right.png"
+      file = "buttons/top-right-active.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
     }
@@ -524,7 +544,7 @@ style "spinbutton" = "default" {
       function = BOX
       detail = "spinbutton_up"
       recolorable = TRUE
-      file = "buttons/top-right-active.png"
+      file = "buttons/top-right.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
     }
@@ -539,10 +559,10 @@ style "spinbutton" = "default" {
     }
     image {
       function = BOX
-      state = NORMAL
+      state = ACTIVE
       detail = "spinbutton_down"
       recolorable = TRUE
-      file = "buttons/bottom-right.png"
+      file = "buttons/bottom-right-active.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
     }
@@ -550,7 +570,7 @@ style "spinbutton" = "default" {
       function = BOX
       detail = "spinbutton_down"
       recolorable = TRUE
-      file = "buttons/bottom-right-active.png"
+      file = "buttons/bottom-right.png"
       border = { 3, 3, 3, 3 }
       stretch = TRUE
     }
