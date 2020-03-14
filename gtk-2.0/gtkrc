@@ -581,21 +581,23 @@ class "GtkSpinButton" style "spinbutton"
 class "GtkSpinButton" style "entrywith"
 
 style "notebook" = "default" {
+  GtkNotebook::tab-curvature = 4
+  GtkNotebook::tab-overlap = -9
   fg[INSENSITIVE] = "#202020"
   engine "pixmap" {
     image {
       function = EXTENSION
       state = ACTIVE
-      file = "buttons/center.png"
       recolorable = FALSE
-      border = { 0, 0, 3, 3 }
+      file = "notebook/inactive.png"
+      border = { 0, 0, 0, 2 }
       stretch = TRUE
     }
     image {
       function = EXTENSION
       recolorable = FALSE
-      file = "buttons/center-active.png"
-      border = { 0, 0, 3, 3 }
+      file = "notebook/active.png"
+      border = { 0, 0, 0, 2 }
       stretch = TRUE
     }
     image {

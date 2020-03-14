@@ -596,55 +596,23 @@ iconview:selected {
 
 
 /*WIP*/
-notebook {
-}
 notebook.frame {
   border-radius: 4px;
+  background-color: rgba(0,0,0,0.02);
+  border: solid 1px rgba(0,0,0,0.05);
+  padding: 6px 12px 12px 12px;
+  margin: 12px;
 }
 
-notebook header.top,
-notebook header.bottom {
-  box-shadow: 0 2px rgba(0,0,0,0.3);
-}
-notebook header.top tab,
-notebook header.bottom tab,
-notebook header.top tab:hover,
-notebook header.bottom tab:hover {
+notebook header tab,
+notebook header tab:hover {
   padding: 6px;
+  margin: 0 4px;
   background-color: transparent;
+  border-bottom: solid 2px rgba(0,0,0,0.3);
 }
-notebook header.top tab:checked,
-notebook header.bottom tab:checked {
-  background-color: @yellow;
-  color: @dark;
-}
-
-
-
-notebook header.left,
-notebook header.right {
-  background-color: @box;
-  color: @box_text;
-  border: 1px solid @lightgray;
-}
-notebook header.right {
-  border-left-width: 0;
-  border-radius: 0 4px 4px 0;
-}
-notebook header.left {
-  border-radius: 4px 0 0 4px;
-  border-right-width: 0;
-}
-notebook header.left tab,
-notebook header.right tab,
-notebook header.left tab:hover,
-notebook header.right tab:hover {
-  padding: 4px;
-}
-notebook header.left tab:checked,
-notebook header.right tab:checked {
-  background-color: @yellow;
-  color: @dark;
+notebook header tab:checked {
+  border-bottom: solid 2px @green;
 }
 
 @keyframes spin {
