@@ -142,6 +142,19 @@ style "default" {
       overlay_file = "radio/unchecked.png"
       overlay_stretch = FALSE
     }
+
+    # disable treeview column highlight
+    image {
+      function = FLAT_BOX
+      detail = "cell_even_sorted"
+      state = NORMAL
+    }
+
+    image {
+      function = FLAT_BOX
+      detail = "cell_odd_sorted"
+      state = NORMAL
+    }
   }
 }
 
