@@ -397,7 +397,7 @@ style "centerbutton" = "button" {
       function = BOX
       state = INSENSITIVE
       recolorable = TRUE
-      file = "buttons/inactive.png"
+      file = "buttons/center-inactive.png"
       border = { 0, 0, 3, 5 }
       stretch = TRUE
     }
@@ -498,14 +498,14 @@ style "entry" = "default" {
       detail = "entry_bg"
       state = NORMAL
       file = "buttons/normal.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
       function = FLAT_BOX
       detail = "entry_bg"
-      file = "buttons/inactive.png"
-      border = { 3, 3, 3, 5 }
+      file = "buttons/normal-inactive.png"
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
