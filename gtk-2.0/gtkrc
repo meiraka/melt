@@ -381,7 +381,7 @@ style "centerbutton" = "button" {
       function = BOX
       state = PRELIGHT
       recolorable = FALSE
-      file = "buttons/center-active.png"
+      file = "buttons/center.png"
       border = { 0, 0, 3, 3 }
       stretch = TRUE
     }
