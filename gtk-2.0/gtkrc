@@ -56,7 +56,7 @@ style "default" {
   GtkSpinButton::shadow_type = GTK_SHADOW_NONE
   GtkTreeView::odd-row-color = "#ffffff"
   GtkTreeView::even-row-color = "#ffffff"
-  GtkTreeView::allow-rules = 1
+  GtkTreeView::allow-rules = 0
   engine "pixmap" {
     image {
       function = SHADOW
