@@ -289,7 +289,7 @@ style "button" = "default" {
       detail = "buttondefault"
       recolorable = FALSE
       file = "buttons/normal.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -297,7 +297,7 @@ style "button" = "default" {
       state = NORMAL
       recolorable = FALSE
       file = "buttons/normal.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -306,7 +306,7 @@ style "button" = "default" {
       recolorable = FALSE
       shadow = OUT
       file = "buttons/normal.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -314,24 +314,46 @@ style "button" = "default" {
       state = PRELIGHT
       recolorable = FALSE
       shadow = IN
-      file = "buttons/active.png"
-      border = { 3, 3, 3, 3 }
+      file = "buttons/normal-active.png"
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
       function = BOX
       state = ACTIVE
       recolorable = FALSE
-      file = "buttons/active.png"
-      border = { 3, 3, 3, 3 }
+      file = "buttons/normal-active.png"
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
       function = BOX
       state = INSENSITIVE
       recolorable = TRUE
-      file = "buttons/inactive.png"
-      border = { 3, 3, 3, 5 }
+      file = "buttons/normal-inactive.png"
+      border = { 2, 2, 2, 4 }
+      stretch = TRUE
+    }
+  }
+}
+
+style "togglebutton" = "button" {
+  engine "pixmap" {
+    image  {
+      function = BOX
+      state = PRELIGHT
+      recolorable = FALSE
+      shadow = IN
+      file = "buttons/normal-on.png"
+      border = { 2, 2, 2, 4 }
+      stretch = TRUE
+    }
+    image  {
+      function = BOX
+      state = ACTIVE
+      recolorable = FALSE
+      file = "buttons/normal-on.png"
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
   }
@@ -389,7 +411,7 @@ style "rightbutton" = "button" {
       detail = "buttondefault"
       recolorable = FALSE
       file = "buttons/right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -397,7 +419,7 @@ style "rightbutton" = "button" {
       state = NORMAL
       recolorable = FALSE
       file = "buttons/right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -406,7 +428,7 @@ style "rightbutton" = "button" {
       recolorable = FALSE
       shadow = OUT
       file = "buttons/right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -415,7 +437,7 @@ style "rightbutton" = "button" {
       recolorable = FALSE
       shadow = IN
       file = "buttons/right-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -423,7 +445,7 @@ style "rightbutton" = "button" {
       state = ACTIVE
       recolorable = FALSE
       file = "buttons/right-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
@@ -431,7 +453,7 @@ style "rightbutton" = "button" {
       state = INSENSITIVE
       recolorable = TRUE
       file = "buttons/right-inactive.png"
-      border = { 3, 3, 3, 5 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
   }
@@ -463,8 +485,14 @@ style "entry" = "default" {
   GtkEntry::honors-transparent-bg-hint = 1
   GtkEntry::inner-border = { 6, 6, 6, 6 }
   GtkEntry::padding = 0
+  GtkEntry::state-hint = 0
+  base[NORMAL] = "#f4f4f4"
+  base[INSENSITIVE] = "#f4f4f4"
   text[INSENSITIVE] = "#808080"
   engine "pixmap" {
+    image {
+      function = SHADOW
+    }
     image {
       function = FLAT_BOX
       detail = "entry_bg"
@@ -492,14 +520,14 @@ style "entrywith" = "entry" {
       detail = "entry_bg"
       state = NORMAL
       file = "buttons/left.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image  {
       function = FLAT_BOX
       detail = "entry_bg"
       file = "buttons/left-inactive.png"
-      border = { 3, 3, 3, 5 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -514,7 +542,7 @@ class "GtkOldEditable" style "entry"
 widget_class "*<GtkOldEditable>*" style "entry"
 widget_class "*<GtkFontButton>*" style "button"
 widget_class "*<GtkColorButton>*" style "button"
-widget_class "*<GtkToggleButton>*" style "button"
+widget_class "*<GtkToggleButton>*" style "togglebutton"
 widget_class "*<GtkCombo>*" style "entrywith"
 widget_class "*<GtkComboBox>*" style "rightbutton"
 widget_class "*<GtkComboBox>*" style "entrywith"
@@ -541,7 +569,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_up"
       recolorable = TRUE
       file = "buttons/top-right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -550,7 +578,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_up"
       recolorable = TRUE
       file = "buttons/top-right-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -558,7 +586,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_up"
       recolorable = TRUE
       file = "buttons/top-right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -567,7 +595,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_down"
       recolorable = TRUE
       file = "buttons/bottom-right-inactive.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -576,7 +604,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_down"
       recolorable = TRUE
       file = "buttons/bottom-right-active.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
     image {
@@ -584,7 +612,7 @@ style "spinbutton" = "default" {
       detail = "spinbutton_down"
       recolorable = TRUE
       file = "buttons/bottom-right.png"
-      border = { 3, 3, 3, 3 }
+      border = { 2, 2, 2, 4 }
       stretch = TRUE
     }
   }
