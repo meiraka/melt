@@ -179,18 +179,21 @@ button.flat:hover {
   background-color: @lightgray;
 }
 
-.horizontal.linked > button,
-.horizontal.linked > entry,
+.horizontal>.linked>button,
+.horizontal.linked>button,
+.horizontal.linked>entry,
 .horizontal.linked>combobox .horizontal.linked button {
   border-radius: 0;
   border-left: solid 1px rgba(0,0,0,0.3);
 }
 
-.horizontal.linked > button:nth-last-child(2),
-.horizontal.linked > entry:nth-last-child(2),
+.horizontal>.linked>button:nth-last-child(2),
+.horizontal.linked>button:nth-last-child(2),
+.horizontal.linked>entry:nth-last-child(2),
 .horizontal.linked>combobox:nth-last-child(2) .horizontal.linked button {
   border-right: solid 1px rgba(0,0,0,0.3);
 }
+.horizontal>.linked>button:first-child,
 .horizontal.linked>button:first-child,
 .horizontal.linked>entry:first-child,
 .horizontal.linked>combobox:first-child .horizontal.linked button {
@@ -198,6 +201,7 @@ button.flat:hover {
   border-bottom-left-radius: 2px;
   border: none;
 }
+.horizontal>.linked>button:last-child,
 .horizontal.linked>button:last-child,
 .horizontal.linked>entry:last-child,
 .horizontal.linked>combobox:last-child .horizontal.linked button {
