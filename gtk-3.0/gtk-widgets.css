@@ -14,6 +14,67 @@
 @define-color window_normal #f4f4f4;
 @define-color window_normal_text #202020;
 
+/* GTK NAMED COLORS ---------------- use responsibly! */
+/*
+widget text/foreground color */
+@define-color theme_fg_color @window_normal_text;
+/*
+text color for entries, views and content in general */
+@define-color theme_text_color @box_text;
+/*
+widget base background color */
+@define-color theme_bg_color @window_normal;
+/*
+text widgets and the like base background color */
+@define-color theme_base_color @box;
+/*
+base background color of selections */
+@define-color theme_selected_bg_color @yellow;
+/*
+text/foreground color of selections */
+@define-color theme_selected_fg_color @dark;
+/*
+base background color of insensitive widgets */
+@define-color insensitive_bg_color @window_normal;
+/*
+text foreground color of insensitive widgets */
+@define-color insensitive_fg_color alpha(@window_normal_text, 0.4);
+/*
+insensitive text widgets and the like base background color */
+@define-color insensitive_base_color @box;
+/*
+widget text/foreground color on backdrop windows */
+@define-color theme_unfocused_fg_color @window_normal_text;
+/*
+text color for entries, views and content in general on backdrop windows */
+@define-color theme_unfocused_text_color @box_text;
+/*
+widget base background color on backdrop windows */
+@define-color theme_unfocused_bg_color @window_normal;
+/*
+text widgets and the like base background color on backdrop windows */
+@define-color theme_unfocused_base_color @box;
+/*
+base background color of selections on backdrop windows */
+@define-color theme_unfocused_selected_bg_color @yellow;
+/*
+text/foreground color of selections on backdrop windows */
+@define-color theme_unfocused_selected_fg_color @dark;
+/*
+insensitive color on backdrop windows*/
+@define-color unfocused_insensitive_color @window_normal;
+/*
+widgets main borders color */
+@define-color borders @white;
+/*
+widgets main borders color on backdrop windows */
+@define-color unfocused_borders @white;
+/*
+these are pretty self explicative */
+@define-color warning_color @yellow;
+@define-color error_color @red;
+@define-color success_color @green;
+
 * {
   transition: background-color 0.5s ease;
 }
