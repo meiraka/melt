@@ -248,7 +248,6 @@ headerbar {
   background-color: @black;
   box-shadow: 0 2px rgba(0,0,0,0.3);
   padding: 0 4px;
-  min-height: 40px;
 }
 
 button.titlebutton,
@@ -281,10 +280,6 @@ button.titlebutton.close image {
   opacity: 0;
 }
 
-
-stackswitcher {
-  margin: 4px;
-}
 stackswitcher button,
 stackswitcher button:hover {
   border-radius: 0;
@@ -294,6 +289,21 @@ stackswitcher button:first-child {
 }
 stackswitcher button:last-child {
   border-radius: 0 4px 4px 0;
+}
+
+headerbar button,
+headerbar button:hover {
+  min-height: 20px;
+  min-width: 20px;
+  margin: 4px 0;
+  padding: 4px;
+}
+
+headerbar button.titlebutton,
+headerbar button.titlebutton:hover {
+  min-height: 0px;
+  min-width: 0px;
+  margin: 6px 2px;
 }
 
 statusbar frame {
