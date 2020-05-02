@@ -229,6 +229,7 @@ button:disabled image {
 }
 
 button.color,
+revealer stack button,
 button.flat {
   color: @window_normal_text;
   background-color: transparent;
@@ -236,8 +237,10 @@ button.flat {
 }
 
 button.color:hover,
+revealer stack button:hover,
 button.flat:hover {
   background-color: @lightgray;
+  box-shadow: none;
 }
 
 .horizontal>.linked>button,
@@ -606,8 +609,6 @@ scale:disabled highlight {
 scale:disabled value {
   color: alpha(currentColor, 0.4);
 }
-
-
 
 /*GtkPathBar(WIP)*/
 .path-bar button,
