@@ -245,22 +245,14 @@ button.flat:hover {
 .horizontal.linked>entry,
 .horizontal.linked>combobox .horizontal.linked button {
   border-radius: 0;
-  border-left: solid 1px rgba(0,0,0,0.3);
 }
 
-.horizontal>.linked>button:nth-last-child(2),
-.horizontal.linked>button:nth-last-child(2),
-.horizontal.linked>entry:nth-last-child(2),
-.horizontal.linked>combobox:nth-last-child(2) .horizontal.linked button {
-  border-right: solid 1px rgba(0,0,0,0.3);
-}
 .horizontal>.linked>button:first-child,
 .horizontal.linked>button:first-child,
 .horizontal.linked>entry:first-child,
 .horizontal.linked>combobox:first-child .horizontal.linked button {
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
-  border: none;
 }
 .horizontal>.linked>button:last-child,
 .horizontal.linked>button:last-child,
@@ -268,7 +260,6 @@ button.flat:hover {
 .horizontal.linked>combobox:last-child .horizontal.linked button {
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
-  border: none;
 }
 
 separator {
@@ -282,6 +273,10 @@ separator.horizontal {
 }
 separator.vertical {
   border-right-width: 1px;
+}
+
+headerbar separator {
+  border: none;
 }
 
 list {
@@ -309,9 +304,8 @@ button.combo box {
 }
 
 headerbar {
-  color: @white;
-  background-color: @black;
-  box-shadow: 0 2px rgba(0,0,0,0.3);
+  color: @window_normal_text;
+  background-color: @window_normal;
   padding: 0 4px;
 }
 
@@ -345,17 +339,6 @@ button.titlebutton.close image {
   opacity: 0;
 }
 
-stackswitcher button,
-stackswitcher button:hover {
-  border-radius: 0;
-}
-stackswitcher button:first-child {
-  border-radius: 4px 0 0 4px;
-}
-stackswitcher button:last-child {
-  border-radius: 0 4px 4px 0;
-}
-
 headerbar button,
 headerbar button:hover {
   min-height: 20px;
@@ -369,6 +352,18 @@ headerbar button.titlebutton:hover {
   min-height: 0px;
   min-width: 0px;
   margin: 6px 2px;
+}
+
+stackswitcher button,
+stackswitcher button:hover {
+  border: none;
+  border-radius: 0;
+}
+stackswitcher button:first-child {
+  border-radius: 4px 0 0 4px;
+}
+stackswitcher button:last-child {
+  border-radius: 0 4px 4px 0;
 }
 
 statusbar frame {
